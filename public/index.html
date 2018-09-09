@@ -10,17 +10,6 @@
     <p>Welcome to the Node Chat App!</p>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        const server = io();
-
-        server.on('connect', () => {
-            console.log('connected to server');
-        });
-
-        server.on('disconnect', () => {
-            console.log('disconected from server');
-        });
-
-    </script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

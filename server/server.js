@@ -20,14 +20,12 @@ io.on('connection', (socket) => {
     
     socket.on('createMessage', (message) => {
         console.log('create message:', message);
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        });
     });
-    
-    socket.emit('newMessage', {
-        from: 'bill123',
-        text: 'white board',
-        createdAt: Date.now()
-    });
-
 });
 
 server.listen(port, () => {

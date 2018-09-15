@@ -25,11 +25,11 @@ io.on('connection', (socket) => {
 
         // sends a message to everyone
         io.emit('newMessage', generateMessage(message.from, message.text));
-        callback('This is from the server.');
+        callback();
     });
 
     socket.on('createLocationMessage', (coords) => {
-        io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
+        io.emit('newLocationMessage', generateLocationMessage('Admin ', coords.latitude, coords.longitude));
     });
 
     // sends to current user only
